@@ -1,40 +1,159 @@
 <!doctype html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<html lang="en" xmlns:min-width="http://www.w3.org/1999/xhtml">
 
-		<title>reveal.js</title>
+<head>
+    <meta charset="utf-8">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+    <title> Coaching Lunch - QA</title>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+</head>
+<body>
+<div class="reveal">
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <section>
+            <h1>What is Software Testing</h1>
+            <p>Why Software testing is Important</p>
+            <p>Test Pyramid</p>
+            <p>Type of Testing</p>
+            <p>Test Design Techniques</p>
+        </section>
+        <section>
+            <p>Process of evaluating a system or its component(s) with the intent to find whether it satisfies the specified requirements or not.</p>
+            <p>Executing a system in order to identify any gaps, errors, or missing requirements in contrary to the actual requirements</p>
+
+            <p>Who are involved:</p>
+            <ul>
+                <li>QA Engineer</li>
+                <li>Software Engineer</li>
+                <li>Product Owner</li>
+                <li>End User</li>
+            </ul>
+        </section>
+        <section>
+            <h1>Test Pyramid</h1>
+            <img src="bad-approach.png" min-width: 1280px/>
+            <img src="ideal-pyramid.png" min-width: 1280px/>
+            <img src="costs.png"/>
+        </section>
+        <section>
+            <h1>TESTING TYPES</h1>
+            <img src="testing-types.png" min-width: 1280px/>
+        </section>
+        <section>
+            <h1>TESTING TYPES</h1>
+            <ul>
+                <li>Unit Testing - Testing of an individual software component or module .Type of White box testing.</li>
+                <li>System Testing - System Under Test- the entire system is tested as per the requirements. Type of Black box testing.</li>
+                <li>Interface testing - verify if all the interactions between these modules are working properly and errors are handled properly.</li>
+            </ul>
+        </section>
+        <section>
+            <h1>TESTING TYPES</h1>
+            <ul>
+                <li>Integration Testing - Testing of all integrated modules to verify the combined functionality after integration</li>
+                <li>Sanity Testing- It is done to determine if a new software version is performing well enough to accept it for a major testing effort or
+                    not.
+                </li>
+                <li>Smoke Testing - Whenever a new build is provided by the development team then the Software Testing team validates the build and ensures that
+                    no major issue exists.
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h1>TESTING TYPES</h1>
+            <ul>
+
+                <li>Regression Testing - Testing an application as a whole for the modification in any module or functionality - Test Automation is
+                    recommended.
+                </li>
+                <li>Acceptance Testing - verifies whether the end to end the flow of the system is as per the business requirements or not and if it is as per
+                    the needs of the end-user. Typically done by client.
+                </li>
+
+            </ul>
+        </section>
+        <section>
+            <h1>WHAT IS TEST CASE?</h1>
+            <p>A test case is a documentation which specifies input values, expected output and the preconditions for executing the test.</p>
+
+            <bold>IEEE Standard 610:
+            </bold>
+            <ul>
+                <li>A set of test inputs, execution conditions, and expected results developed for a particular objective, such as to exercise a particular
+                    program path or to verify compliance with a specific requirement.
+
+                </li>
+
+            </ul>
+        </section>
+        <section>
+            <h2>Thanks! Questions?</h2>
+        </section>
+    </div>
+</div>
+<script src="dist/reveal.js"></script>
+<script>
+  // Full list of configuration options available at:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+
+    transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+    // Optional reveal.js plugins
+    dependencies: [
+      {
+        src: 'lib/js/classList.js', condition: function () {
+          return !document.body.classList;
+        }
+      },
+      {
+        src: 'plugin/markdown/marked.js', condition: function () {
+          return !!document.querySelector('[data-markdown]');
+        }
+      },
+      {
+        src: 'plugin/markdown/markdown.js', condition: function () {
+          return !!document.querySelector('[data-markdown]');
+        }
+      },
+      {
+        src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+          hljs.initHighlightingOnLoad();
+        }
+      },
+      {src: 'plugin/notes/notes.js', async: true}
+    ]
+  });
+
+  Reveal.addEventListener('fragmentshown', function (event) {
+    if (event.fragment.getAttribute("data")) {
+      var dataString = event.fragment.getAttribute("data");
+      var count = dataString.split("|");
+      document.getElementById("testyes").innerHTML = count[0];
+      document.getElementById("testno").innerHTML = count[1];
+
+    }
+  });
+</script>
+</body>
 </html>
